@@ -4,65 +4,98 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>MHD Visualization</title>
+
+  <!-- LaTeX形式の数式を表示する設定 -->
+  <script>
+    window.MathJax = {
+      loader: { load: ['[tex]/boldsymbol'] },
+      tex: {
+        packages: { '[+]': ['boldsymbol'] },
+        macros: {
+          bm: ['\\boldsymbol{#1}', 1]
+        }
+      }
+    };
+  </script>
+  <script defer
+    src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-svg.js">
+  </script>
 
   <style>
     body {
       margin: 0;
       padding: 20px;
-      font-family: Arial, sans-serif;
       text-align: center;
       background-color: white;
+    }
+
+    .visualization {
+      margin-bottom: 50px;
     }
 
     video {
       width: 100%;
       max-width: 900px;
       height: auto;
+      display: block;
+      margin: 0 auto;
     }
 
     .caption {
-      margin-top: 15px;
+      margin: 15px 0 8px;
       font-family: "Times New Roman", Times, serif;
       font-size: 24px;
+      font-weight: normal;
+    }
+
+    .equation {
+      font-size: 24px;
+    }
+
+    .equation mjx-container[display="true"] {
+      margin: 0.4em 0;
     }
   </style>
 </head>
 
 <body>
 
-  <video autoplay loop muted playsinline controls>
-    <source src="animation_magnetic_energy.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+  <section class="visualization">
+    <video autoplay loop muted playsinline controls>
+      <source src="animation_magnetic_energy.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-  <p class="caption">Visualization of Magnetic Energy</p>
+    <h2 class="caption">Visualization of Magnetic Energy</h2>
+    <div class="equation">
+      \[ \dfrac{1}{2}\lvert\bm{b}\rvert^2 \]
+    </div>
+  </section>
+
+  <section class="visualization">
+    <video autoplay loop muted playsinline controls>
+      <source src="animation_current_density.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <h2 class="caption">Visualization of Current Density</h2>
+    <div class="equation">
+      \[ \lvert\bm{j}\rvert^2, \bm{j} = \nabla \times \bm{b} \]
+    </div>
+  </section>
+
+  <section class="visualization">
+    <video autoplay loop muted playsinline controls>
+      <source src="animation_cross_helicity.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <h2 class="caption">Visualization of Cross Helicity</h2>
+    <div class="equation">
+      \[ \bm{u} \cdot \bm{b} \]
+    </div>
+  </section>
 
 </body>
-
-  
-<body>
-
-  <video autoplay loop muted playsinline controls>
-    <source src="animation_current_density.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <p class="caption">Visualization of Current density</p>
-
-</body>
-
-  
-<body>
-
-  <video autoplay loop muted playsinline controls>
-    <source src="animation_cross_helicity.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <p class="caption">Visualization of Cross helicity</p>
-
-</body>
-
 </html>
