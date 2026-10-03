@@ -63,7 +63,7 @@
     }
 
     .interactive-caption {
-      margin: 0 0 12px;
+      margin: 12px 0 0;
       font-family: "Times New Roman", Times, serif;
       font-size: 22px;
       font-weight: normal;
@@ -109,18 +109,22 @@
       \[ \dfrac{1}{2}\bm{b}^2 \]
     </div>
 
-    <!-- web_magnetic_energyフォルダ内の3D可視化ページを埋め込む -->
+    <!-- ボリュームレンダリングの3D可視化ページを埋め込む -->
     <div class="interactive-view">
-      <h3 class="interactive-caption">Drag to rotate and pinch to zoom</h3>
       <iframe
         class="interactive-frame"
-        src="./web_magnetic_energy/index.html"
+        src="./web_magnetic_energy_volume/index.html"
         title="Interactive magnetic energy visualization"
         loading="lazy"
         allowfullscreen>
       </iframe>
+
+      <h3 class="interactive-caption">Drag to rotate and pinch to zoom</h3>
+
       <p class="interactive-link">
-        <a href="./web_magnetic_energy/index.html" target="_blank" rel="noopener">Open the 3D view in a new tab</a>
+        <a href="./web_magnetic_energy_volume/index.html"
+           target="_blank"
+           rel="noopener">Open the 3D view in a new tab</a>
       </p>
     </div>
   </section>
