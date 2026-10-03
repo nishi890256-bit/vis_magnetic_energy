@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Magnetic Energy · Volume</title>
+  <link rel="stylesheet" href="./style.css?v=volume-black-5">
+  <script type="importmap">
+    {"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"}}
+  </script>
+</head>
+<body>
+  <div id="viewer"></div>
+  <header><h1>Magnetic Energy</h1></header>
+  <div id="actions">
+    <label><input id="outline" type="checkbox" checked disabled>Domain outline</label>
+    <button id="reset" disabled>Reset view</button>
+  </div>
+  <div id="loading" role="status"><p id="message">Loading volume…</p><button id="retry" hidden>Reload</button></div>
+  <noscript>This view requires JavaScript.</noscript>
+  <script type="module" src="./app.js?v=volume-configurable-ranges-6"></script>
+  <script>
+    document.getElementById('retry').onclick = () => location.reload();
+    window.addEventListener('error', event => {
+      if (event.target?.tagName === 'SCRIPT' || event.target?.tagName === 'LINK') {
+        document.getElementById('message').textContent = 'Unable to load the viewer. Check the files and internet connection.';
+        document.getElementById('retry').hidden = false;
+      }
+    }, true);
+  </script>
+</body>
+</html>
