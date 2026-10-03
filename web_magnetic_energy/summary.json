@@ -1,0 +1,86 @@
+[
+  {
+    "iso_value": 1.0,
+    "target_reduction": 0.0,
+    "points": 188115,
+    "cells": 366832,
+    "file": "meshes/magnetic_energy_100_iso_1.ply",
+    "file_size_bytes": 9283889,
+    "color_rgb": [
+      0.02000006,
+      0.652535156,
+      0.749802434
+    ],
+    "opacity": 0.0046296296296296285
+  },
+  {
+    "iso_value": 2.0,
+    "target_reduction": 0.0,
+    "points": 96124,
+    "cells": 186480,
+    "file": "meshes/magnetic_energy_100_iso_2.ply",
+    "file_size_bytes": 4731528,
+    "color_rgb": [
+      0.023312914349117714,
+      0.897999359924484,
+      0.36073871343115577
+    ],
+    "opacity": 0.03703703703703703
+  },
+  {
+    "iso_value": 3.0,
+    "target_reduction": 0.0,
+    "points": 39968,
+    "cells": 76856,
+    "file": "meshes/magnetic_energy_100_iso_3.ply",
+    "file_size_bytes": 1958671,
+    "color_rgb": [
+      0.9995285432627147,
+      0.9995193706781492,
+      0.0134884641450013
+    ],
+    "opacity": 0.125
+  },
+  {
+    "iso_value": 4.0,
+    "target_reduction": 0.0,
+    "points": 14896,
+    "cells": 28108,
+    "file": "meshes/magnetic_energy_100_iso_4.ply",
+    "file_size_bytes": 723219,
+    "color_rgb": [
+      0.99913633,
+      0.673435546,
+      0.217200652
+    ],
+    "opacity": 0.2962962962962962
+  },
+  {
+    "iso_value": 5.0,
+    "target_reduction": 0.0,
+    "points": 4522,
+    "cells": 8384,
+    "file": "meshes/magnetic_energy_100_iso_5.ply",
+    "file_size_bytes": 217829,
+    "color_rgb": [
+      0.9867129505479589,
+      0.2595183410914934,
+      0.19012239549291934
+    ],
+    "opacity": 0.5787037037037038
+  },
+  {
+    "iso_value": 6.0,
+    "target_reduction": 0.0,
+    "points": 784,
+    "cells": 1476,
+    "file": "meshes/magnetic_energy_100_iso_6.ply",
+    "file_size_bytes": 38312,
+    "color_rgb": [
+      0.6837,
+      0.05,
+      0.4139
+    ],
+    "opacity": 1.0
+  }
+]

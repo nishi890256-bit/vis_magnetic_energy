@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Magnetic Energy · MHD Visualization</title>
+  <meta name="description" content="磁気エネルギーの6つの等値面を回転・拡大して観察する3D可視化。">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23152235'/%3E%3Cpath d='M6 23V9l10 7L26 9v14' fill='none' stroke='%23f2ad36' stroke-width='3'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="./style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="viewer" aria-label="磁気エネルギーの3D表示"></div>
+  <header id="topbar">
+    <button id="menu-button" aria-label="等値面の設定を開く" aria-expanded="false" aria-controls="drawer">
+      <span></span><span></span><span></span>
+    </button>
+    <div id="title-area">
+      <h1>Magnetic Energy</h1>
+      <div id="snapshot-label" hidden>Snapshot 100</div>
+    </div>
+  </header>
+  <div id="backdrop"></div>
+  <aside id="drawer" aria-label="表示設定" aria-hidden="true" inert>
+    <div class="drawer-heading"><h2>等値面</h2><button id="close-menu" aria-label="設定を閉じる">×</button></div>
+    <div class="row-heading"><span>磁気エネルギー</span><span>透明度 α</span></div>
+    <div id="surface-controls"><p>データを読み込み中…</p></div>
+    <div class="button-pair">
+      <button id="show-all" disabled>すべて表示</button>
+      <button id="hide-all" disabled>すべて非表示</button>
+    </div>
+    <section class="setting-note">
+      <h3>透明度</h3>
+      <div class="formula">α(x) = (x / 6)<sup>3</sup></div>
+      <p>各等値面に、出力時の透明度を適用します。</p>
+    </section>
+    <section class="setting-note">
+      <h3>読み込んだ格子</h3>
+      <p id="grid-label">—</p>
+    </section>
+    <section class="setting-note">
+      <h3>操作</h3>
+      <p>ドラッグ：回転<br>ホイール・ピンチ：拡大／縮小<br>右ドラッグ・2本指：移動</p>
+    </section>
+  </aside>
+  <section id="legend" aria-label="磁気エネルギーのカラーバー" hidden>
+    <div class="legend-heading"><span>Magnetic energy</span><span>Rainbow Uniform</span></div>
+    <canvas id="colorbar" width="512" height="16" role="img" aria-label="Rainbow Uniform、磁気エネルギー0から6"></canvas>
+    <div class="colorbar-ticks"><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+  </section>
+  <div id="view-actions">
+    <label class="box-toggle"><input id="domain-toggle" type="checkbox" checked disabled>Domain outline</label>
+    <button id="reset-view" disabled>Reset view</button>
+  </div>
+  <div id="load-status" role="status" aria-live="polite" hidden></div>
+  <div id="loading">
+    <div class="loading-card">
+      <div class="spinner"></div>
+      <h2 id="loading-text" role="status" aria-live="polite">表示を準備しています…</h2>
+      <p id="loading-detail"></p>
+      <button id="retry-load" hidden>再読み込み</button>
+    </div>
+  </div>
+  <noscript><p class="noscript">この可視化にはJavaScriptを有効にしてください。</p></noscript>
+  <script type="module" src="./app.js?v=y-up-20261003-1613"></script>
+  <script>
+    window.addEventListener("error", function (event) {
+      if (event.target && event.target.tagName === "SCRIPT") {
+        document.getElementById("loading-text").textContent = "表示プログラムを読み込めませんでした。";
+        document.getElementById("loading-detail").textContent = "app.jsの配置とインターネット接続を確認してください。";
+        document.querySelector(".spinner").hidden = true;
+        document.getElementById("retry-load").hidden = false;
+      }
+    }, true);
+    document.getElementById("retry-load").addEventListener("click", function () { location.reload(); });
+  </script>
+</body>
+</html>
