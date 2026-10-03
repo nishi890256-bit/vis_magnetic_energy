@@ -56,6 +56,43 @@
     .equation mjx-container[display="true"] {
       margin: 0.4em 0;
     }
+
+    .interactive-view {
+      max-width: 900px;
+      margin: 28px auto 0;
+    }
+
+    .interactive-caption {
+      margin: 0 0 12px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 22px;
+      font-weight: normal;
+    }
+
+    .interactive-frame {
+      display: block;
+      width: 100%;
+      height: 680px;
+      border: 1px solid #dfe3e8;
+      border-radius: 8px;
+      box-sizing: border-box;
+      background-color: white;
+    }
+
+    .interactive-link {
+      margin: 12px 0 0;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 18px;
+    }
+
+    .interactive-link a {
+      color: #254f88;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 12px; }
+      .interactive-frame { height: 540px; }
+    }
   </style>
 </head>
 
@@ -70,6 +107,21 @@
     <h2 class="caption">Visualization of Magnetic Energy</h2>
     <div class="equation">
       \[ \dfrac{1}{2}\bm{b}^2 \]
+    </div>
+
+    <!-- webフォルダ内の3D可視化ページを埋め込む -->
+    <div class="interactive-view">
+      <h3 class="interactive-caption">Interactive 3D View — Snapshot 100</h3>
+      <iframe
+        class="interactive-frame"
+        src="./web/index.html"
+        title="Interactive magnetic energy isosurfaces, snapshot 100"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+      <p class="interactive-link">
+        <a href="./web/index.html" target="_blank" rel="noopener">Open the 3D view in a new tab</a>
+      </p>
     </div>
   </section>
 
