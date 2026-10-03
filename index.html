@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MHD Visualization</title>
+  <title>MHD Visualizations with the Lorentz Force</title>
 
   <!-- LaTeX形式の数式を表示する設定 -->
   <script>
@@ -28,6 +28,13 @@
       padding: 20px;
       text-align: center;
       background-color: white;
+    }
+
+    .page-title {
+      margin: 10px 0 30px;
+      font-family: "Times New Roman", Times, serif;
+      font-size: 30px;
+      font-weight: normal;
     }
 
     .visualization {
@@ -90,13 +97,24 @@
     }
 
     @media (max-width: 600px) {
-      body { padding: 12px; }
-      .interactive-frame { height: 540px; }
+      body {
+        padding: 12px;
+      }
+
+      .page-title {
+        font-size: 26px;
+      }
+
+      .interactive-frame {
+        height: 540px;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <h1 class="page-title">MHD Visualizations with the Lorentz Force</h1>
 
   <section class="visualization">
     <video autoplay loop muted playsinline controls>
